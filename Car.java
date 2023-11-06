@@ -1,65 +1,6 @@
 import java.awt.*;
 
 public abstract class Car {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public int nrDoors; // Number of doors on the car
     public double enginePower; // Engine power of the car
     public double currentSpeed; // The current speed of the car
@@ -92,6 +33,7 @@ public abstract class Car {
     public void stopEngine(){
         currentSpeed = 0;
     }
+    abstract double speedFactor();
     abstract void incrementSpeed(double amount);
     abstract void decrementSpeed(double amount);
     public void gas(double amount){
