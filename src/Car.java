@@ -57,7 +57,7 @@ public abstract class Car implements Movable {
     public abstract void incrementSpeed(double amount);
     public abstract void decrementSpeed(double amount);
     public void gas(double amount){
-        incrementSpeed(amount);
+            incrementSpeed(Math.max(Math.min(amount, 1), 0));
     }
     public void brake(double amount){
         decrementSpeed(amount);
@@ -65,9 +65,4 @@ public abstract class Car implements Movable {
     public double getDirection(){return direction;}
     public double getX(){return x;}
     public double getY(){return y;}
-
-    public static void main(String[] args){
-        System.out.println("NU KÖRS FILEN OCH BILEN");
-    }
-
 }

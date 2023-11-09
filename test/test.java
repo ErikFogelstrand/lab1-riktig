@@ -41,7 +41,20 @@ public class test {
 
         assert (1==1);
     }
-
+    @Test
+    public void testSaab95GasOver1(){
+        Saab95 otherSaab95 = new Saab95();
+        otherSaab95.gas(1);
+        saab95.gas(3);
+        assert(saab95.getCurrentSpeed() == otherSaab95.getCurrentSpeed());
+    }
+    @Test
+    public void testSaab95GasUnder0(){
+        Saab95 otherSaab95 = new Saab95();
+        otherSaab95.gas(0);
+        saab95.gas(-3);
+        assert(saab95.getCurrentSpeed() == otherSaab95.getCurrentSpeed());
+    }
 
 
 
@@ -58,5 +71,29 @@ public class test {
         assert (volvo240.color == Color.black);
     }
 
+    @Test
+    public void testVolvo240GasOver1(){
+        Volvo240 otherVolvo240 = new Volvo240();
+        volvo240.gas(3);
+        otherVolvo240.gas(1);
+        assert(volvo240.currentSpeed == otherVolvo240.currentSpeed);
+    }
+    @Test
+    public void testVolvo240GasUnder0(){
+        Volvo240 otherVolvo240 = new Volvo240();
+        volvo240.gas(-3);
+        otherVolvo240.gas(0);
+        assert(volvo240.getCurrentSpeed() == otherVolvo240.getCurrentSpeed());
+    }
+    @Test
+    public void testVolvo240BrakeOver1(){
+        Volvo240 otherVolvo240 = new Volvo240();
+        otherVolvo240.gas(1);
+        otherVolvo240.brake(1);
+        volvo240.gas(1);
+        volvo240.brake(10);
+        assert(volvo240.getCurrentSpeed() == otherVolvo240.getCurrentSpeed());
+
+    }
 
 }
