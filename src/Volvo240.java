@@ -12,7 +12,7 @@ public class Volvo240 extends Car{
         stopEngine();
     }
 
-    public double speedFactor(){
+    protected double speedFactor(){
         return enginePower * 0.01 * trimFactor;
     }
     public void incrementSpeed(double amount){
