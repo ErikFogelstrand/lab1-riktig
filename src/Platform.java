@@ -1,4 +1,4 @@
 public interface Platform {
-    void tilt(double newAngle);
+    double tilt(double newAngle, Car car);
     boolean tiltable(double currentSpeed);
 }
