@@ -1,27 +1,29 @@
 import java.awt.*;
 
-public class Scania extends Truck{
+public class Scania extends Car implements Platform{
     private final PlatformHelper platform;
-    private double angle;
-    private double minAngle;
-    private double maxAngle;
-
     public Scania(){
         nrDoors = 2;
         color = Color.red;
-        enginePower = 125;
+        enginePower = 90;
         modelName = "Scania";
-        angle = 0;
-        minAngle = 0;
-        maxAngle = 70;
-        platform = new PlatformHelper();
+        platform = new PlatformHelper(this, 0, 70);
         stopEngine();
     }
     protected double speedFactor(){
-        if (angle == 0)
+        if (getAngle() == 0)
             return enginePower*0.01;
         else
             return 0;
+    }
+    public double getAngle(){return platform.getAngle();}
+    public double getMinAngle(){return platform.getMinAngle();}
+    public double getMaxAngle(){return platform.getMaxAngle();}
+    public void tilt(double newAngle){
+        platform.tilt(newAngle);
+    }
+    public boolean tiltable(){
+        return platform.tiltable();
     }
 
 
