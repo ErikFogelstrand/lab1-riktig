@@ -54,8 +54,14 @@ public abstract class Car implements Movable {
         direction -= turnAngle;
     }
 
-    public abstract void incrementSpeed(double amount);
-    public abstract void decrementSpeed(double amount);
+    protected void incrementSpeed(double amount){
+        currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount, enginePower);
+    }
+    protected void decrementSpeed(double amount){
+        currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount,0);
+    }
+    protected abstract double speedFactor();
+
     public void gas(double amount){
             incrementSpeed(Math.max(Math.min(amount, 1), 0));
     }
