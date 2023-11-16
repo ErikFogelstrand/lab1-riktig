@@ -1,74 +1,29 @@
-import java.awt.*;
-
-public abstract class Car implements Movable {
-
-    protected int nrDoors; // Number of doors on the car
-    protected double enginePower; // Engine power of the car
-    protected double currentSpeed; // The current speed of the car
-    protected Color color; // Color of the car
-    protected String modelName; // The car model name
-    protected double x; // x-coordinate of car
-    protected double y; // y-coordinate of car
-    protected double direction; // direction of car in degrees
-
-    public int getNrDoors(){
-        return nrDoors;
+public abstract class Car extends Vehicle{
+    protected boolean inStorage;
+    protected Truck storageUnit; // TODO ändra till mer generell typ
+    public boolean getInStorage(){return inStorage;}
+    public void driveIn(Truck truck){ // TODO mer generell typ
+        if (!inStorage){
+            inStorage = true;
+            storageUnit = truck;
+            currentSpeed = 0;
+        }
     }
-
-    public double getEnginePower(){
-        return enginePower;
+    public void updateStoragePosition(){
+        if (inStorage){
+            x = storageUnit.getX();
+            y = storageUnit.getY();
+        }
     }
-    public double getCurrentSpeed(){
-        return currentSpeed;
-    }
-
-    public Color getColor(){
-        return color;
-    }
-
-    public void setColor(Color clr){
-        color = clr;
-    }
-
-    public void startEngine(){
-        currentSpeed = 0.1;
-    }
-
-    public void stopEngine(){
-        currentSpeed = 0;
-    }
-
-
-    // Implemented from Movable (move, turnLeft, turnRight)
-    public void move(){
-        y += Math.sin(direction) * currentSpeed;
-        x += Math.cos(direction) * currentSpeed;
-    }
-
-
-    public void turnLeft(double turnAngle){
-        direction += turnAngle;
-    }
-
-    public void turnRight(double turnAngle){
-        direction -= turnAngle;
-    }
-
-    protected void incrementSpeed(double amount){
-        currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount, enginePower);
-    }
-    protected void decrementSpeed(double amount){
-        currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount,0);
-    }
-    protected abstract double speedFactor();
-
+    @Override
     public void gas(double amount){
-            incrementSpeed(Math.max(Math.min(amount, 1), 0));
+        if (!inStorage)
+            super.gas(amount);
     }
+    @Override
     public void brake(double amount){
-        decrementSpeed(amount);
+        if (!inStorage)
+            super.brake(amount);
+
     }
-    public double getDirection(){return direction;}
-    public double getX(){return x;}
-    public double getY(){return y;}
 }

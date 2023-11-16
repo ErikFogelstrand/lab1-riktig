@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Scania extends Car implements Platform{
+public class Scania extends Truck implements Platform{
     private final PlatformHelper platform;
     public Scania(){
         nrDoors = 2;
