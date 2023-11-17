@@ -1,15 +1,11 @@
 import java.awt.*;
 
-public abstract class Vehicle implements Movable {
+public abstract class Vehicle extends Body implements Movable {
     protected int nrDoors; // Number of doors on the car
     protected double enginePower; // Engine power of the car
     protected double currentSpeed; // The current speed of the car
     protected Color color; // Color of the car
     protected String modelName; // The car model name
-    protected double x; // x-coordinate of car
-    protected double y; // y-coordinate of car
-    protected double direction; // direction of car in degrees
-
     public int getNrDoors(){
         return nrDoors;
     }
@@ -68,7 +64,4 @@ public abstract class Vehicle implements Movable {
         decrementSpeed(Math.max(Math.min(amount, 1), 0));
 
     }
-    public double getDirection(){return direction;}
-    public double getX(){return x;}
-    public double getY(){return y;}
 }

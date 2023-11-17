@@ -1,4 +1,4 @@
-public abstract class Car extends Vehicle{
+public abstract class Car extends Vehicle implements Storable {
     protected boolean inStorage;
     protected Truck storageUnit; // TODO ändra till mer generell typ
     public boolean getInStorage(){return inStorage;}
@@ -6,10 +6,17 @@ public abstract class Car extends Vehicle{
         if (!inStorage){
             inStorage = true;
             storageUnit = truck;
-            currentSpeed = 0;
+            stopEngine();
         }
     }
-    public void updateStoragePosition(){
+    public void driveOut(){
+        if (inStorage){
+            x = storageUnit.getX() + Math.cos(storageUnit.getDirection())*3;
+            y = storageUnit.getY() + Math.sin(storageUnit.getDirection())*3;
+            inStorage = false;
+        }
+    }
+    public void updateStorage(){
         if (inStorage){
             x = storageUnit.getX();
             y = storageUnit.getY();
