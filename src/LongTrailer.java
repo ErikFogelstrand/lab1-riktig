@@ -1,9 +1,9 @@
 import java.awt.*;
 
 public class LongTrailer extends Truck implements StorageUnit<Car> {
-    private final StorageUnitHelper transport;
+    private final StorageUnitHelper<Car> transport;
     public LongTrailer(){
-        transport = new StorageUnitHelper(this, 4);
+        transport = new StorageUnitHelper<>(this, 4);
         nrDoors = 2;
         color = Color.red;
         enginePower = 90;
@@ -17,8 +17,8 @@ public class LongTrailer extends Truck implements StorageUnit<Car> {
             return 0;
     }
     public boolean getOpen(){return transport.getOpen();}
-    public void setOpen(boolean newOpen){transport.setOpen(newOpen);}
-    public boolean openable(){return currentSpeed == 0;}
+    public void open(){transport.open(currentSpeed == 0);}
+    public void close(){transport.close();}
     public boolean driveIn(Car car){return transport.driveIn(car);}
     public boolean driveOut(){return transport.driveOut();}
     public void updateStorage(){transport.updateStorage();}

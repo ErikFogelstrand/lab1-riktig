@@ -1,5 +1,5 @@
 public interface Storable {
-    void driveIn(Truck truck);
+    void driveIn(Body body);
     void driveOut();
     void updateStorage();
 }

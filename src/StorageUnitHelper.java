@@ -1,24 +1,27 @@
 import java.util.ArrayList;
 
 public class StorageUnitHelper<CarType extends Car> implements StorageUnit<CarType> {
-    private final Truck truck; // TODO ändra till en mer generell typ
+    private final Body body; // TODO ändra till en mer generell typ
     private boolean open;
     private final int capacity;
-    private ArrayList<CarType> cars;
-    public StorageUnitHelper(Truck truck, int capacity){
-        this.truck = truck;
+    protected ArrayList<CarType> cars; // Ska vara private!
+    public StorageUnitHelper(Body body, int capacity){
+        this.body = body;
         open = false;
         this.capacity = capacity;
         cars = new ArrayList<>();
     }
     public boolean getOpen(){return open;}
-    public void setOpen(boolean newOpen){open = newOpen;}
-    public boolean openable(){return truck.openable();}
+    public void open(boolean openable){
+        if (openable)
+            open = true;
+    }
+    public void close(){open = false;}
     public boolean driveIn(CarType car){
-        double distance = Math.hypot(truck.getX() - car.getX(), truck.getY() - car.getY());
+        double distance = Math.hypot(body.getX() - car.getX(), body.getY() - car.getY());
         if (open && cars.size() < capacity && !car.getInStorage() && distance < 3){
             cars.add(0, car);
-            car.driveIn(truck);
+            car.driveIn(body);
             return true;
         }
         else return false;
