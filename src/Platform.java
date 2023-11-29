@@ -1,4 +1,4 @@
-public interface Platform<T> {
+public interface Platform {
     double getAngle();
     double getMinAngle();
     double getMaxAngle();

@@ -2,7 +2,8 @@ public abstract class Car extends Vehicle implements Storable {
     protected boolean inStorage;
     protected Body storageUnit; // TODO ändra till mer generell typ
     public boolean getInStorage(){return inStorage;}
-    public void driveIn(Truck truck){ // TODO mer generell typ
+
+    public void driveIn(Body body){ // TODO mer generell typ
         if (!inStorage){
             inStorage = true;
             storageUnit = body;

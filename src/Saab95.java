@@ -9,9 +9,8 @@ public class Saab95 extends Car {
         nrDoors = 2;
         color = Color.red;
         enginePower = 125;
-	    turboOn = false;
+        turboOn = false;
         modelName = "Saab95";
-
         stopEngine();
     }
 
@@ -20,7 +19,7 @@ public class Saab95 extends Car {
     }
 
     public void setTurboOff(){
-	    turboOn = false;
+        turboOn = false;
     }
 
     public double speedFactor(){
@@ -28,13 +27,4 @@ public class Saab95 extends Car {
         if(turboOn) turbo = 1.3;
         return enginePower * 0.01 * turbo;
     }
-    public void incrementSpeed(double amount){
-        currentSpeed = getCurrentSpeed() + speedFactor() * amount;
-    }
-    public void decrementSpeed(double amount){
-        currentSpeed = getCurrentSpeed() - speedFactor() * amount;
-    }
-
-    // TODO fix this method according to lab pm
-
 }

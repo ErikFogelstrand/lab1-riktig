@@ -40,7 +40,6 @@ public abstract class Vehicle extends Body implements Movable {
         x += Math.cos(direction) * currentSpeed;
     }
 
-
     public void turnLeft(double turnAngle){
         direction += turnAngle;
     }
@@ -58,7 +57,7 @@ public abstract class Vehicle extends Body implements Movable {
     protected abstract double speedFactor();
 
     public void gas(double amount){
-            incrementSpeed(Math.max(Math.min(amount, 1), 0));
+        incrementSpeed(Math.max(Math.min(amount, 1), 0));
     }
     public void brake(double amount){
         decrementSpeed(Math.max(Math.min(amount, 1), 0));

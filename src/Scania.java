@@ -7,7 +7,7 @@ public class Scania extends Truck implements Platform{
         color = Color.red;
         enginePower = 90;
         modelName = "Scania";
-        platform = new PlatformHelper(this, 0, 70);
+        platform = new PlatformHelper(this, 0, Math.toRadians(70));
         stopEngine();
     }
     protected double speedFactor(){

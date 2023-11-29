@@ -1,3 +1,4 @@
+
 public class Workshop<CarType extends Car> extends Body implements StorageUnit<CarType>{
     protected final StorageUnitHelper<CarType> storage; // Ska vara private!
 
