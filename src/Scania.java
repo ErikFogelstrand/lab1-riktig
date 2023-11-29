@@ -7,7 +7,7 @@ public class Scania extends Truck implements Platform{
         color = Color.red;
         enginePower = 90;
         modelName = "Scania";
-        platform = new PlatformHelper(this, 0, Math.toRadians(70));
+        platform = new PlatformHelper(0, Math.toRadians(70));
         stopEngine();
     }
     protected double speedFactor(){
@@ -20,11 +20,8 @@ public class Scania extends Truck implements Platform{
     public double getMinAngle(){return platform.getMinAngle();}
     public double getMaxAngle(){return platform.getMaxAngle();}
     public void tilt(double newAngle){
-        platform.tilt(newAngle);
+        if (currentSpeed == 0) platform.tilt(newAngle);
+        else platform.tilt(0);
     }
-    public boolean tiltable(){
-        return platform.tiltable();
-    }
-
 
 }

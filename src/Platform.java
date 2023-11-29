@@ -3,5 +3,4 @@ public interface Platform {
     double getMinAngle();
     double getMaxAngle();
     void tilt(double newAngle);
-    boolean tiltable();
 }

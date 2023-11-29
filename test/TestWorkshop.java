@@ -42,13 +42,6 @@ public class TestWorkshop {
         assert volvo240Workshop.storage.cars.get(0).inStorage;
     }
     @Test
-    public void testStoreCarAndItPekarTillbaksToWorkshop(){
-        Volvo240 volvo240 = new Volvo240();
-        volvo240Workshop.open();
-        volvo240Workshop.driveIn(volvo240);
-        assert volvo240Workshop.storage.cars.get(0).storageUnit == volvo240Workshop;
-    }
-    @Test
     public void testIfTwoCarsGetInTheOneLängstInCantGetOutFirst(){
         Volvo240 volvo240 = new Volvo240();
         Saab95 saab95 = new Saab95();

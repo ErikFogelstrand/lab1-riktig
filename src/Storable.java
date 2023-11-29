@@ -1,5 +1,5 @@
 public interface Storable {
-    void driveIn(Body body);
-    void driveOut();
-    void updateStorage();
+    void driveIn();
+    void driveOut(double x, double y);
+    void updateStorage(double x, double y);
 }

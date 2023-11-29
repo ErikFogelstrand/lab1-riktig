@@ -37,17 +37,7 @@ public class TestScania {
         assert (Math.PI/4) == scania.getAngle();
     }
 
-    @Test
-    public void testScaniaTiltable(){
-        scania.gas(0.5);
-        assert !scania.tiltable();
-    }
 
-    @Test
-    public void testScaniaTiltable2(){
-        scania.stopEngine();
-        assert scania.tiltable();
-    }
 
     @Test
     public void testScaniaGasIfTilt(){

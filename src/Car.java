@@ -1,26 +1,24 @@
 public abstract class Car extends Vehicle implements Storable {
     protected boolean inStorage;
-    protected Body storageUnit; // TODO ändra till mer generell typ
     public boolean getInStorage(){return inStorage;}
 
-    public void driveIn(Body body){ // TODO mer generell typ
+    public void driveIn(){
         if (!inStorage){
             inStorage = true;
-            storageUnit = body;
             stopEngine();
         }
     }
-    public void driveOut(){
+    public void driveOut(double x, double y){
         if (inStorage){
-            x = storageUnit.getX() + Math.cos(storageUnit.getDirection() + Math.PI)*3;
-            y = storageUnit.getY() + Math.sin(storageUnit.getDirection() + Math.PI)*3;
+            this.x = x + 3;
+            this.y = y;
             inStorage = false;
         }
     }
-    public void updateStorage(){
+    public void updateStorage(double x, double y){
         if (inStorage){
-            x = storageUnit.getX();
-            y = storageUnit.getY();
+            this.x = x;
+            this.y = y;
         }
     }
     @Override

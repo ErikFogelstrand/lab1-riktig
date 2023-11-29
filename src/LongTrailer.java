@@ -17,7 +17,7 @@ public class LongTrailer extends Truck implements StorageUnit<Car> {
             return 0;
     }
     public boolean getOpen(){return transport.getOpen();}
-    public void open(){transport.open(currentSpeed == 0);}
+    public void open(){if (currentSpeed == 0) transport.open();}
     public void close(){transport.close();}
     public boolean driveIn(Car car){return transport.driveIn(car);}
     public boolean driveOut(){return transport.driveOut();}
