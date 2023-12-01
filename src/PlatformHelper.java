@@ -12,5 +12,6 @@ public class PlatformHelper implements Platform{
     public double getMaxAngle(){return maxAngle;}
     public void tilt(double newAngle){
         angle = Math.min(getMaxAngle(), Math.max(newAngle, getMinAngle()));
+        System.out.println(angle);
     }
 }

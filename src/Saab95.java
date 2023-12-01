@@ -13,6 +13,17 @@ public class Saab95 extends Car {
         modelName = "Saab95";
         stopEngine();
     }
+    public Saab95(double x, double y){
+        this.x = x;
+        this.y = y;
+        inStorage = false;
+        nrDoors = 2;
+        color = Color.red;
+        enginePower = 125;
+        turboOn = false;
+        modelName = "Saab95";
+        stopEngine();
+    }
 
     public void setTurboOn(){
         turboOn = true;

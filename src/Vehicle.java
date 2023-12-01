@@ -35,17 +35,25 @@ public abstract class Vehicle extends Body implements Movable {
 
 
     // Implemented from Movable (move, turnLeft, turnRight)
-    public void move(){
+    public void move(int boundX, int boundY) {
+        if (x < 0 || x > boundX){
+            x = Math.max(Math.min(x, boundX), 0);
+            direction = Math.PI - direction;
+        }
+        if (y < 0 || y > boundY){
+            y = Math.max(Math.min(y, boundY), 0);
+            direction = Math.PI*2 - direction;
+        }
         y += Math.sin(direction) * currentSpeed;
         x += Math.cos(direction) * currentSpeed;
     }
 
     public void turnLeft(double turnAngle){
-        direction += turnAngle;
+        direction -= turnAngle;
     }
 
     public void turnRight(double turnAngle){
-        direction -= turnAngle;
+        direction += turnAngle;
     }
 
     protected void incrementSpeed(double amount){

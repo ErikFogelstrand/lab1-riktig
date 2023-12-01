@@ -3,6 +3,11 @@ import java.awt.*;
 public class Scania extends Truck implements Platform{
     private final PlatformHelper platform;
     public Scania(){
+        this(0, 0);
+    }
+    public Scania(double x, double y) {
+        this.x = x;
+        this.y = y;
         nrDoors = 2;
         color = Color.red;
         enginePower = 90;

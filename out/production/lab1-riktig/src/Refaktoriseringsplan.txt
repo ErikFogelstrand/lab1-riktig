@@ -1,0 +1,7 @@
+* Ta bort implementationerna av StorageUnit och Platform från Scania, Longtrailer och Workshop.
+* Ta bort den abstrakta klassen Truck och gör så Scania och Longtrailer extendar Vehicle.
+* Flytta in CarController i modellpaketet och ta bort kompositionen av drawPanel.
+* Skapa en interface UpdateListener som CarController skicakr uppdateringar till.
+* Flytta över lämplig kod från CarController till en ny klass Application.
+* Flytta över lämplig kod från CarView till klassen Application.
+* Implementera UpdateListener i DrawPanel så DrawPanel lyssnar efter uppdateringar från CarController istället för CarView.
