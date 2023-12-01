@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-12-01T10:15:34.764Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0" etag="uPYM-lUeRCFpy7jz25gL" version="22.1.5" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-01T10:18:10.788Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0" etag="NolpizVnzvszb0lHag0C" version="22.1.5" type="github">
   <diagram name="Sida-1" id="CnWCtKxtzdh5dnYdsv_A">
-    <mxGraphModel dx="1795" dy="2103" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2018" dy="2318" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -201,6 +201,14 @@
         <mxCell id="MsR3hsUYv7-_mPZWKxLB-9" value="+ getCurrentSpeed() : double&lt;br&gt;+ move(boundX:int, boundY:int) : void&lt;br&gt;+ turnLeft(turnAngle:double) : void&lt;br&gt;+ turnRight(turnAngle:double) : void&lt;br&gt;+ gas(amount:double) : void&lt;br&gt;+ brake(amount:double) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="MsR3hsUYv7-_mPZWKxLB-6" vertex="1">
           <mxGeometry y="74" width="220" height="100" as="geometry" />
         </mxCell>
+        <mxCell id="Z6ngFZZ4EXr_-JbcI5yZ-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="2kluUkrTPu_d9wiH57XI-49" target="2kluUkrTPu_d9wiH57XI-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="230" y="30" />
+              <mxPoint x="230" y="30" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="2kluUkrTPu_d9wiH57XI-49" value="StorageUnitHelper&amp;lt;CarType&amp;gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-345" y="5" width="200" height="150" as="geometry" />
         </mxCell>
@@ -321,19 +329,16 @@
         <mxCell id="PzIaEd6Q4RFsh_id0Quy-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;" parent="1" source="2kluUkrTPu_d9wiH57XI-14" target="2kluUkrTPu_d9wiH57XI-9" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="-60" y="758" />
-              <mxPoint x="-60" y="700" />
+              <mxPoint x="-40" y="700" />
+              <mxPoint x="-40" y="700" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="PzIaEd6Q4RFsh_id0Quy-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;" parent="1" source="2kluUkrTPu_d9wiH57XI-14" target="2kluUkrTPu_d9wiH57XI-17" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="PzIaEd6Q4RFsh_id0Quy-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;" parent="1" source="2kluUkrTPu_d9wiH57XI-50" target="2kluUkrTPu_d9wiH57XI-5" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="228" y="80" />
-              <mxPoint x="228" y="20" />
+              <mxPoint x="230" y="700" />
+              <mxPoint x="230" y="700" />
             </Array>
           </mxGeometry>
         </mxCell>
