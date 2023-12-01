@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-12-01T10:58:32.039Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="lT7Bk8AvUYmWlpsFEOEP" version="22.1.5" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-01T10:58:48.855Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="O11pMkCXEwU5R-aFT-Nz" version="22.1.5" type="github">
   <diagram name="Sida-1" id="CnWCtKxtzdh5dnYdsv_A">
-    <mxGraphModel dx="4003" dy="3025" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1761" dy="1715" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -284,7 +284,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="m9QJUeq86h9TBKvvN4Z5-1" value="&lt;b&gt;Platform&lt;br&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;br&gt;&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=35;fillColor=#d5e8d4;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="475" y="340" width="170" height="100" as="geometry" />
+          <mxGeometry x="480" y="356" width="170" height="100" as="geometry" />
         </mxCell>
         <mxCell id="m9QJUeq86h9TBKvvN4Z5-2" value="+ getAngle() : double&lt;br&gt;+ getMinAngle() : double&lt;br&gt;+ getMaxAngle() : double&lt;br&gt;+ tilt(newAngle:double) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="m9QJUeq86h9TBKvvN4Z5-1" vertex="1">
           <mxGeometry y="35" width="170" height="65" as="geometry" />
