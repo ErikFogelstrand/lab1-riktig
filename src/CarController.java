@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Collection;
 
 
 /*
@@ -11,6 +12,9 @@ import java.util.ArrayList;
  */
 
 public class CarController {
+    private ArrayList<UpdateListener> updateListeners;
+    private int carBoundX;
+    private int carBoundY;
     // member fields:
 
     // The delay (ms) corresponds to 20 updates a sec (hz)
@@ -40,6 +44,9 @@ public class CarController {
         // Start the timer
         cc.timer.start();
     }
+    public void AddUpdateListener(UpdateListener newUpdateListener){
+        updateListeners.add(newUpdateListener);
+    }
 
     /* Each step the TimerListener moves all the cars in the list and tells the
     * view to update its images. Change this method to your needs.
@@ -47,12 +54,12 @@ public class CarController {
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             for (Vehicle car : cars) {
-                car.move(frame.getX() - 100, frame.getY() - 240 - 60);
+                car.move(carBoundX, carBoundY);
                 int x = (int) Math.round(car.getX());
                 int y = (int) Math.round(car.getY());
-                frame.drawPanel.moveit(x, y, car);
-                // repaint() calls the paintComponent method of the panel
-                frame.drawPanel.repaint();
+                for (UpdateListener listener : updateListeners){
+                    listener.updateSent(x, y, car.getModelName());
+                }
             }
         }
     }

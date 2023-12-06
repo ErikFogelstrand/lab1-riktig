@@ -14,14 +14,13 @@ import java.awt.event.ActionListener;
  **/
 
 public class CarView extends JFrame{
-    private static final int X = 800;
-    private static final int Y = 700;
+    private int boundX;
 
     // The controller member
-    CarController carC;
+    CarController carC; //TODO remove this also (application)
 
-    DrawPanel drawPanel = new DrawPanel(X, Y-240); //CarC som 3e arg.
-
+    //DrawPanel drawPanel = new DrawPanel(X, Y-240); //CarC som 3e arg.
+    JPanel carView = new JPanel();
     JPanel controlPanel = new JPanel();
 
     JPanel gasPanel = new JPanel();
@@ -37,29 +36,22 @@ public class CarView extends JFrame{
     JButton lowerBedButton = new JButton("Scania Lower Bed");
     JButton turnRightButton = new JButton("Swing right");
     JButton turnLeftButton = new JButton("Swing left");
+    JButton addCarButton = new JButton("Add a Car");
+    JButton removeCarButton = new JButton("Remove a Car");
 
     JButton startButton = new JButton("Start all cars");
     JButton stopButton = new JButton("Stop all cars");
-    public int getX(){return X;}
-    public int getY(){return Y;}
 
     // Constructor
-    public CarView(String framename, CarController cc){
+    public CarView(CarController cc, int boundX){
+        this.boundX = boundX;
         this.carC = cc;
-        initComponents(framename);
+        initComponents();
     }
 
     // Sets everything in place and fits everything
     // TODO: Take a good look and make sure you understand how these methods and components work
-    private void initComponents(String title) {
-
-        this.setTitle(title);
-        this.setPreferredSize(new Dimension(X,Y));
-        this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-
-        this.add(drawPanel);
-
-
+    private void initComponents() {
 
         SpinnerModel spinnerModel =
                 new SpinnerNumberModel(0, //initial value
@@ -77,9 +69,7 @@ public class CarView extends JFrame{
         gasPanel.add(gasLabel, BorderLayout.PAGE_START);
         gasPanel.add(gasSpinner, BorderLayout.PAGE_END);
 
-        this.add(gasPanel);
-
-        controlPanel.setLayout(new GridLayout(2,4));
+        controlPanel.setLayout(new GridLayout(2,5));
 
         controlPanel.add(gasButton, 0);
         controlPanel.add(turboOnButton, 1);
@@ -89,22 +79,26 @@ public class CarView extends JFrame{
         controlPanel.add(lowerBedButton, 5);
         controlPanel.add(turnLeftButton, 6);
         controlPanel.add(turnRightButton, 7);
+        controlPanel.add(addCarButton,8);
+        controlPanel.add(removeCarButton,9;
 
-        controlPanel.setPreferredSize(new Dimension((X/2)+4, 200));
-        this.add(controlPanel);
+        controlPanel.setPreferredSize(new Dimension((boundX/(2*(5/4)))+(4*(5/4)), 200));
         controlPanel.setBackground(Color.CYAN);
 
 
         startButton.setBackground(Color.blue);
         startButton.setForeground(Color.CYAN);
-        startButton.setPreferredSize(new Dimension(X/5-15,200));
-        this.add(startButton);
+        startButton.setPreferredSize(new Dimension(boundX/5-15,200));
 
 
         stopButton.setBackground(Color.red);
         stopButton.setForeground(Color.black);
-        stopButton.setPreferredSize(new Dimension(X/5-15,200));
-        this.add(stopButton);
+        stopButton.setPreferredSize(new Dimension(boundX/5-15,200));
+
+        carView.add(gasPanel);
+        carView.add(controlPanel);
+        carView.add(startButton);
+        carView.add(stopButton);
 
         // This actionListener is for the gas button only
         // TODO: Create more for each component as necessary
@@ -174,18 +168,6 @@ public class CarView extends JFrame{
             }
         });
 
-
-        // Make the frame pack all it's components by respecting the sizes if possible.
-        this.pack();
-
-        // Get the computer screen resolution
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        // Center the frame
-        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
-        // Make the frame visible
-        this.setVisible(true);
-        // Make sure the frame exits when "x" is pressed
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     }
 }

@@ -7,7 +7,7 @@ import javax.swing.*;
 
 // This panel represent the animated part of the view with the car images.
 
-public class DrawPanel extends JPanel{
+public class DrawPanel extends JPanel implements UpdateListener{
 
     // Just a single image, TODO: Generalize
     BufferedImage volvoImage;
@@ -20,17 +20,16 @@ public class DrawPanel extends JPanel{
     Point saab95Point = new Point();
 
 
-    // TODO Make this genereal for all cars
-    void moveit(int x, int y, Vehicle car){
-        if (car instanceof Volvo240){
-            volvoPoint.x = x;
-            volvoPoint.y = y;
-        } else if (car instanceof Saab95) {
-            saab95Point.x = x;
-            saab95Point.y = y;
-        } else if (car instanceof Scania) {
-            scaniaPoint.x = x;
-            scaniaPoint.y = y;
+    // TODO Make this general for all cars
+    public void updateSent(int x, int y, String modelName){
+        moveit(x, y, modelName);
+        repaint();
+    }
+    public void moveit(int x, int y, String modelName){
+        switch (modelName){
+            case ("Volvo240"): {volvoPoint = new Point(x, y); break;}
+            case ("Saab95"): {saab95Point = new Point(x, y); break;}
+            case ("Scania"): {scaniaPoint = new Point(x, y); break;}
         }
     }
 

@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class LongTrailer extends Truck implements StorageUnit<Car> {
+public class LongTrailer extends Vehicle{
     private final StorageUnitHelper<Car> transport;
     public LongTrailer(){
         transport = new StorageUnitHelper<>(this, 4);

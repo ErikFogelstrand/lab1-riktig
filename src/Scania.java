@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Scania extends Truck implements Platform{
+public class Scania extends Vehicle{
     private final PlatformHelper platform;
     public Scania(){
         this(0, 0);

@@ -20,6 +20,7 @@ public abstract class Vehicle extends Body implements Movable {
     public Color getColor(){
         return color;
     }
+    public String getModelName(){return modelName;}
 
     public void setColor(Color clr){
         color = clr;
