@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-12-06T12:23:13.865Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0" etag="U5MOA67csg-9gzJjY1NF" version="22.1.5" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-06T13:17:35.508Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0" etag="pjnAM459KMRoOc5epY9l" version="22.1.5" type="github">
   <diagram name="Sida-1" id="CnWCtKxtzdh5dnYdsv_A">
-    <mxGraphModel dx="2640" dy="1915" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2901" dy="1818" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -89,30 +89,30 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="2kluUkrTPu_d9wiH57XI-9" value="CarController" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="2kluUkrTPu_d9wiH57XI-9" value="FuncDistribution" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="-315" y="170" width="170" height="260" as="geometry" />
         </mxCell>
         <mxCell id="2kluUkrTPu_d9wiH57XI-10" value="&lt;div&gt;- delay: int&lt;/div&gt;&lt;div&gt;+ timer: Timer&lt;/div&gt;&lt;div&gt;+ cars: ArrayList&amp;lt;Vehicle&amp;gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="2kluUkrTPu_d9wiH57XI-9" vertex="1">
           <mxGeometry y="26" width="170" height="74" as="geometry" />
         </mxCell>
-        <mxCell id="2kluUkrTPu_d9wiH57XI-12" value="&lt;div&gt;+ gas(amount: int): void&lt;/div&gt;&lt;div&gt;+ brake(amount: int): void&lt;/div&gt;&lt;div&gt;+ stopAllCars(): void&lt;/div&gt;&lt;div&gt;+ turnLeft(): void&lt;/div&gt;&lt;div&gt;+ turnRight(): void&lt;/div&gt;&lt;div&gt;+saabTurboOn(): void&lt;br&gt;&lt;/div&gt;&lt;div&gt;+saabTurboOff(): void&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ scaniaLiftBed(): void&lt;/div&gt;&lt;div&gt;+ scaniaLowerBed(): void&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="2kluUkrTPu_d9wiH57XI-9" vertex="1">
+        <mxCell id="2kluUkrTPu_d9wiH57XI-12" value="&lt;div&gt;+ gas(amount: int): void&lt;/div&gt;&lt;div&gt;+ brake(amount: int): void&lt;/div&gt;&lt;div&gt;+ stopAllCars(): void&lt;/div&gt;&lt;div&gt;+ turnLeft(): void&lt;/div&gt;&lt;div&gt;+ turnRight(): void&lt;/div&gt;&lt;div&gt;+ saabTurboOn(): void&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ saabTurboOff(): void&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ scaniaLiftBed(): void&lt;/div&gt;&lt;div&gt;+ scaniaLowerBed(): void&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="2kluUkrTPu_d9wiH57XI-9" vertex="1">
           <mxGeometry y="100" width="170" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="fyHRbXsw6JHeMjWbs4PB-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;" parent="1" source="2kluUkrTPu_d9wiH57XI-13" target="2kluUkrTPu_d9wiH57XI-9" edge="1">
+        <mxCell id="fyHRbXsw6JHeMjWbs4PB-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;" parent="1" source="2kluUkrTPu_d9wiH57XI-13" target="2kluUkrTPu_d9wiH57XI-9" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="-595" y="380" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="2kluUkrTPu_d9wiH57XI-13" value="CarView" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="-700" y="480" width="210" height="450" as="geometry" />
+        <mxCell id="2kluUkrTPu_d9wiH57XI-13" value="CarController" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="-700" y="480" width="210" height="380" as="geometry" />
         </mxCell>
-        <mxCell id="2kluUkrTPu_d9wiH57XI-14" value="&lt;div&gt;- X: int&lt;/div&gt;&lt;div&gt;- Y: int&lt;/div&gt;&lt;br&gt;&lt;div&gt;+ controlPanel: JPanel&lt;/div&gt;&lt;div&gt;+ gasSpinner: JSpinner&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ controlPanel: JPanel&lt;br&gt;&lt;/div&gt;&lt;div&gt;+gasAmount: int&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ gasButton: JButton&lt;/div&gt;&lt;div&gt;+ brakeutton: JButton&lt;/div&gt;&lt;/div&gt;&lt;div&gt;+ turboOnButton: JButton&lt;/div&gt;&lt;div&gt;+ turboOffButton: JButton&lt;/div&gt;&lt;div&gt;+ liftBedButton: JButton&lt;/div&gt;&lt;div&gt;+ lowerBedBUtton: JButton&lt;/div&gt;&lt;div&gt;+ turnRightButton: JButton &lt;br&gt;&lt;/div&gt;&lt;div&gt;+ turnLeftButton: JButton &lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ StartButton: JButton&lt;/div&gt;&lt;div&gt;+stopButton: JButton&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="2kluUkrTPu_d9wiH57XI-13" vertex="1">
-          <mxGeometry y="26" width="210" height="344" as="geometry" />
+        <mxCell id="2kluUkrTPu_d9wiH57XI-14" value="+ controlPanel: JPanel&lt;div&gt;+ gasSpinner: JSpinner&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ controlPanel: JPanel&lt;br&gt;&lt;/div&gt;&lt;div&gt;+gasAmount: int&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ gasButton: JButton&lt;/div&gt;&lt;div&gt;+ brakeutton: JButton&lt;/div&gt;&lt;/div&gt;&lt;div&gt;+ turboOnButton: JButton&lt;/div&gt;&lt;div&gt;+ turboOffButton: JButton&lt;/div&gt;&lt;div&gt;+ liftBedButton: JButton&lt;/div&gt;&lt;div&gt;+ lowerBedBUtton: JButton&lt;/div&gt;&lt;div&gt;+ turnRightButton: JButton &lt;br&gt;&lt;/div&gt;&lt;div&gt;+ turnLeftButton: JButton &lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ StartButton: JButton&lt;/div&gt;&lt;div&gt;+stopButton: JButton&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="2kluUkrTPu_d9wiH57XI-13" vertex="1">
+          <mxGeometry y="26" width="210" height="274" as="geometry" />
         </mxCell>
         <mxCell id="2kluUkrTPu_d9wiH57XI-16" value="&lt;div&gt;+getX(): int&lt;/div&gt;&lt;div&gt;+getY(): int&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;-initComponents(title: String): void{&lt;sup&gt;&lt;br&gt;&lt;/sup&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="2kluUkrTPu_d9wiH57XI-13" vertex="1">
-          <mxGeometry y="370" width="210" height="80" as="geometry" />
+          <mxGeometry y="300" width="210" height="80" as="geometry" />
         </mxCell>
         <mxCell id="fyHRbXsw6JHeMjWbs4PB-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;dashed=1;" parent="1" source="2kluUkrTPu_d9wiH57XI-17" target="fyHRbXsw6JHeMjWbs4PB-1" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -121,10 +121,10 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="2kluUkrTPu_d9wiH57XI-17" value="DrawPanel" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="-450" y="650" width="240" height="220" as="geometry" />
+        <mxCell id="2kluUkrTPu_d9wiH57XI-17" value="CarView" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="-450" y="640" width="240" height="220" as="geometry" />
         </mxCell>
-        <mxCell id="2kluUkrTPu_d9wiH57XI-18" value="&lt;div&gt;+volvoImage: BufferedImage&lt;/div&gt;&lt;div&gt;+ scaniaImage: BufferedImage&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ saab95Image: BufferedImage&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+volvoPoint: Point&lt;/div&gt;&lt;div&gt;+scaniaPoint: Point&lt;/div&gt;&lt;div&gt;+ saab95: Point&lt;/div&gt;" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="2kluUkrTPu_d9wiH57XI-17" vertex="1">
+        <mxCell id="2kluUkrTPu_d9wiH57XI-18" value="&lt;div&gt;+ volvoImage: BufferedImage&lt;/div&gt;&lt;div&gt;+ scaniaImage: BufferedImage&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ saab95Image: BufferedImage&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+volvoPoint: Point&lt;/div&gt;&lt;div&gt;+scaniaPoint: Point&lt;/div&gt;&lt;div&gt;+ saab95: Point&lt;/div&gt;" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="2kluUkrTPu_d9wiH57XI-17" vertex="1">
           <mxGeometry y="26" width="240" height="124" as="geometry" />
         </mxCell>
         <mxCell id="2kluUkrTPu_d9wiH57XI-20" value="&lt;div&gt;+moveit(x: int, y:int, car:Vehicle): void&lt;br&gt;&lt;/div&gt;&lt;div&gt;+drawPanel(x: int, y: int): void&lt;br&gt;&lt;/div&gt;# paintComponent(g: Graphics): void " style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="2kluUkrTPu_d9wiH57XI-17" vertex="1">
@@ -351,16 +351,28 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="fyHRbXsw6JHeMjWbs4PB-10" value="Application" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
-          <mxGeometry x="-700" y="248" width="170" height="130" as="geometry" />
-        </mxCell>
-        <mxCell id="fyHRbXsw6JHeMjWbs4PB-11" value="- :CarController&lt;br&gt;&lt;div&gt;- CarView&lt;/div&gt;&lt;div&gt;- drawPanel&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="fyHRbXsw6JHeMjWbs4PB-10" vertex="1">
-          <mxGeometry y="26" width="170" height="44" as="geometry" />
+          <mxGeometry x="-760" y="232" width="250" height="82" as="geometry" />
         </mxCell>
         <mxCell id="fyHRbXsw6JHeMjWbs4PB-12" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="fyHRbXsw6JHeMjWbs4PB-10" vertex="1">
-          <mxGeometry y="70" width="170" height="8" as="geometry" />
+          <mxGeometry y="26" width="250" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="fyHRbXsw6JHeMjWbs4PB-13" value="&lt;div&gt;+ main()&lt;/div&gt;&lt;div&gt;- initApp()&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="fyHRbXsw6JHeMjWbs4PB-10" vertex="1">
-          <mxGeometry y="78" width="170" height="52" as="geometry" />
+        <mxCell id="fyHRbXsw6JHeMjWbs4PB-13" value="&lt;div&gt;+ main(): void&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="fyHRbXsw6JHeMjWbs4PB-10" vertex="1">
+          <mxGeometry y="34" width="250" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="FKxPztuUi6cC36j0gkjM-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FKxPztuUi6cC36j0gkjM-2" target="fyHRbXsw6JHeMjWbs4PB-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FKxPztuUi6cC36j0gkjM-2" value="WindowView" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="-1070" y="294" width="250" height="136" as="geometry" />
+        </mxCell>
+        <mxCell id="FKxPztuUi6cC36j0gkjM-3" value="&lt;div&gt;+boundX&lt;/div&gt;&lt;div&gt;+boundY&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="FKxPztuUi6cC36j0gkjM-2">
+          <mxGeometry y="26" width="250" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="FKxPztuUi6cC36j0gkjM-4" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="FKxPztuUi6cC36j0gkjM-2">
+          <mxGeometry y="80" width="250" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="FKxPztuUi6cC36j0gkjM-5" value="&lt;div&gt;- initApp(title: String, dp: drawPanel): void&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="FKxPztuUi6cC36j0gkjM-2">
+          <mxGeometry y="88" width="250" height="48" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
