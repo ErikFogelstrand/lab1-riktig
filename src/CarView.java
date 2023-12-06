@@ -1,173 +1,67 @@
-import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.*;
 
-/**
- * This class represents the full view of the MVC pattern of your car simulator.
- * It initializes with being center on the screen and attaching it's controller in it's state.
- * It communicates with the Controller by calling methods of it when an action fires of in
- * each of it's components.
- * TODO: Write more actionListeners and wire the rest of the buttons
- **/
+// This panel represent the animated part of the view with the car images.
 
-public class CarView extends JFrame{
-    private int boundX;
+public class CarView extends JPanel implements UpdateListener{
 
-    // The controller member
-    CarController carC; //TODO remove this also (application)
+    // Just a single image, TODO: Generalize
+    BufferedImage volvoImage;
+    BufferedImage scaniaImage;
+    BufferedImage saab95Image;
 
-    //DrawPanel drawPanel = new DrawPanel(X, Y-240); //CarC som 3e arg.
-    JPanel carView = new JPanel();
-    JPanel controlPanel = new JPanel();
+    // To keep track of a singel cars position
+    Point volvoPoint = new Point();
+    Point scaniaPoint = new Point();
+    Point saab95Point = new Point();
 
-    JPanel gasPanel = new JPanel();
-    JSpinner gasSpinner = new JSpinner();
-    int gasAmount = 0;
-    JLabel gasLabel = new JLabel("Amount of gas");
 
-    JButton gasButton = new JButton("Gas");
-    JButton brakeButton = new JButton("Brake");
-    JButton turboOnButton = new JButton("Saab Turbo on");
-    JButton turboOffButton = new JButton("Saab Turbo off");
-    JButton liftBedButton = new JButton("Scania Lift Bed");
-    JButton lowerBedButton = new JButton("Scania Lower Bed");
-    JButton turnRightButton = new JButton("Swing right");
-    JButton turnLeftButton = new JButton("Swing left");
-    JButton addCarButton = new JButton("Add a Car");
-    JButton removeCarButton = new JButton("Remove a Car");
-
-    JButton startButton = new JButton("Start all cars");
-    JButton stopButton = new JButton("Stop all cars");
-
-    // Constructor
-    public CarView(CarController cc, int boundX){
-        this.boundX = boundX;
-        this.carC = cc;
-        initComponents();
+    // TODO Make this general for all cars
+    public void updateSent(int x, int y, String modelName){
+        moveit(x, y, modelName);
+        repaint();
+    }
+    public void moveit(int x, int y, String modelName){
+        switch (modelName){
+            case ("Volvo240"): {volvoPoint = new Point(x, y); break;}
+            case ("Saab95"): {saab95Point = new Point(x, y); break;}
+            case ("Scania"): {scaniaPoint = new Point(x, y); break;}
+        }
     }
 
-    // Sets everything in place and fits everything
-    // TODO: Take a good look and make sure you understand how these methods and components work
-    private void initComponents() {
+    // Initializes the panel and reads the images
+    public CarView(int x, int y) {
+        this.setDoubleBuffered(true);
+        this.setPreferredSize(new Dimension(x, y));
+        this.setBackground(Color.pink);
+        // Print an error message in case file is not found with a try/catch block
+        try {
+            // You can remove the "pics" part if running outside of IntelliJ and
+            // everything is in the same main folder.
+            // volvoImage = ImageIO.read(new File("Volvo240.jpg"));
 
-        SpinnerModel spinnerModel =
-                new SpinnerNumberModel(0, //initial value
-                        0, //min
-                        100, //max
-                        1);//step
-        gasSpinner = new JSpinner(spinnerModel);
-        gasSpinner.addChangeListener(new ChangeListener() {
-            public void stateChanged(ChangeEvent e) {
-                gasAmount = (int) ((JSpinner)e.getSource()).getValue();
-            }
-        });
+            // Rememember to rightclick src New -> Package -> name: pics -> MOVE *.jpg to pics.
+            // if you are starting in IntelliJ.
+            volvoImage = ImageIO.read(CarView.class.getResourceAsStream("pics/Volvo240.jpg"));
+            scaniaImage = ImageIO.read(CarView.class.getResourceAsStream("pics/Scania.jpg"));
+            saab95Image = ImageIO.read(CarView.class.getResourceAsStream("pics/Saab95.jpg"));
 
-        gasPanel.setLayout(new BorderLayout());
-        gasPanel.add(gasLabel, BorderLayout.PAGE_START);
-        gasPanel.add(gasSpinner, BorderLayout.PAGE_END);
+        } catch (IOException ex)
+        {
+            ex.printStackTrace();
+        }
 
-        controlPanel.setLayout(new GridLayout(2,5));
+    }
 
-        controlPanel.add(gasButton, 0);
-        controlPanel.add(turboOnButton, 1);
-        controlPanel.add(liftBedButton, 2);
-        controlPanel.add(brakeButton, 3);
-        controlPanel.add(turboOffButton, 4);
-        controlPanel.add(lowerBedButton, 5);
-        controlPanel.add(turnLeftButton, 6);
-        controlPanel.add(turnRightButton, 7);
-        controlPanel.add(addCarButton,8);
-        controlPanel.add(removeCarButton,9;
-
-        controlPanel.setPreferredSize(new Dimension((boundX/(2*(5/4)))+(4*(5/4)), 200));
-        controlPanel.setBackground(Color.CYAN);
-
-
-        startButton.setBackground(Color.blue);
-        startButton.setForeground(Color.CYAN);
-        startButton.setPreferredSize(new Dimension(boundX/5-15,200));
-
-
-        stopButton.setBackground(Color.red);
-        stopButton.setForeground(Color.black);
-        stopButton.setPreferredSize(new Dimension(boundX/5-15,200));
-
-        carView.add(gasPanel);
-        carView.add(controlPanel);
-        carView.add(startButton);
-        carView.add(stopButton);
-
-        // This actionListener is for the gas button only
-        // TODO: Create more for each component as necessary
-        gasButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                carC.gas(gasAmount);
-            }
-        });
-
-        brakeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                carC.brake(gasAmount);
-            }
-        });
-
-        stopButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) { carC.stopAllCars();
-            }
-        });
-
-        stopButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) { carC.startAllCars();
-            }
-        });
-
-        turnRightButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                carC.turnRight();
-            }
-        });
-
-        turnLeftButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                carC.turnLeft();
-            }
-        });
-
-        turboOnButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                carC.saabTurboOn();
-            }
-        });
-        turboOffButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                carC.saabTurboOff();
-            }
-        });
-
-        liftBedButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                carC.scaniaLiftBed();
-            }
-        });
-        lowerBedButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                carC.scaniaLowerBed();
-            }
-        });
-
-
+    // This method is called each time the panel updates/refreshes/repaints itself
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.drawImage(volvoImage, volvoPoint.x, volvoPoint.y, null);
+        g.drawImage(saab95Image, saab95Point.x, saab95Point.y, null);
+        g.drawImage(scaniaImage, scaniaPoint.x, scaniaPoint.y, null); // see javadoc for more info on the parameters
     }
 }

@@ -5,9 +5,9 @@ public class Application extends JFrame{
     private static final int boundX = 800;
     private static final int boundY = 700;
 
-    protected void initApp(String title, DrawPanel dp, CarView cv) { //TODO hämtad från CarView (initComponents)
+    private void initApp(String title, CarView cv, CarController cc) {
         // Make the frame pack all it's components by respecting the sizes if possible.
-        this.setPreferredSize(new Dimension(boundX,boundY));  //TODO flyttat till APP från initComp i carView
+        this.setPreferredSize(new Dimension(boundX,boundY));
         this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
         this.pack();
         this.setTitle(title);
@@ -20,25 +20,24 @@ public class Application extends JFrame{
 
         // Make sure the frame exits when "x" is pressed
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.add(dp);
-        this.add(cv.carView);
+        this.add(cv);
+        this.add(cc.carView);
 
     }
     public static void main(String[] args) {
         // Instance of this class
         Application app = new Application();
-        CarController cc = new CarController(boundX - 100, boundY - 240 - 60);
-        DrawPanel dp = new DrawPanel(boundX, boundY - 240);
-        CarView cv = new CarView(cc, boundX);
+        FuncDistribution fc = new FuncDistribution(boundX - 100, boundY - 240 - 60);
+        CarView cv = new CarView(boundX, boundY - 240);
+        CarController cc = new CarController(fc, boundX);
 
-        cc.AddUpdateListener(dp);
-        cc.cars.add(new Volvo240(0, 0));
-        cc.cars.add(new Saab95(0, 100));
-        cc.cars.add(new Scania(0, 200));
+        fc.AddUpdateListener(cv);
+        fc.cars.add(VehicleFactory.Volvo240());
+        fc.cars.add(VehicleFactory.Saab95());
+        fc.cars.add(VehicleFactory.Scania());
+        fc.timer.start();
 
-        // Start the timer
-        cc.timer.start();
-        app.initApp("Hilarious CarGame FUN!", dp, cv);
+        app.initApp("Hilarious CarGame FUN!", cv, cc);
     }
 
 
