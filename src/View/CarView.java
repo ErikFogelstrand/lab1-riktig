@@ -1,10 +1,12 @@
 package View;
 
 import Model.UpdateListener;
+import Model.Vehicle;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Objects;
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -40,6 +42,7 @@ public class CarView extends JPanel implements UpdateListener {
         this.setPreferredSize(new Dimension(x, y));
         this.setBackground(Color.pink);
         // Print an error message in case file is not found with a try/catch block
+
         try {
             // You can remove the "pics" part if running outside of IntelliJ and
             // everything is in the same main folder.
@@ -47,16 +50,14 @@ public class CarView extends JPanel implements UpdateListener {
 
             // Rememember to rightclick src New -> Package -> name: pics -> MOVE *.jpg to pics.
             // if you are starting in IntelliJ.
-            volvoImage = ImageIO.read(Objects.requireNonNull(CarView.class.getResourceAsStream("View/pics/Volvo240.jpg")));
-            scaniaImage = ImageIO.read(Objects.requireNonNull(CarView.class.getResourceAsStream("View/pics/Scania.jpg")));
-            saab95Image = ImageIO.read(Objects.requireNonNull(CarView.class.getResourceAsStream("View/pics/Saab95.jpg")));
 
-        } catch (IOException ex)
-        {
+            volvoImage = ImageIO.read(Objects.requireNonNull(CarView.class.getResourceAsStream("/Volvo240.jpg")));
+            scaniaImage = ImageIO.read(Objects.requireNonNull(CarView.class.getResourceAsStream("/Scania.jpg")));
+            saab95Image = ImageIO.read(Objects.requireNonNull(CarView.class.getResourceAsStream("/Saab95.jpg")));
+        } catch (IOException ex) {
             ex.printStackTrace();
+            }
         }
-
-    }
 
     // This method is called each time the panel updates/refreshes/repaints itself
     @Override

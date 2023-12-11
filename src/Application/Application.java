@@ -39,9 +39,9 @@ public class Application extends JFrame{
         CarController cc = new CarController(fc, boundX);
 
         fc.AddUpdateListener(cv);
-        fc.AddCar(VehicleFactory.Volvo240());
-        fc.AddCar(VehicleFactory.Saab95());
-        fc.AddCar(VehicleFactory.Scania());
+        fc.addToCars(VehicleFactory.Volvo240());
+        fc.addToCars(VehicleFactory.Saab95());
+        fc.addToCars(VehicleFactory.Scania());
         fc.StartTimer();
 
         app.initApp("Hilarious CarGame FUN!", cv, cc);

@@ -24,12 +24,12 @@ public class CarController extends JFrame{
     private JButton brakeButton = new JButton("Brake");
     private JButton turboOnButton = new JButton("Saab Turbo on");
     private JButton turboOffButton = new JButton("Saab Turbo off");
-    private JButton liftBedButton = new JButton("Model.Scania Lift Bed");
-    private JButton lowerBedButton = new JButton("Model.Scania Lower Bed");
+    private JButton liftBedButton = new JButton("Scania Lift Bed");
+    private JButton lowerBedButton = new JButton("Scania Lower Bed");
     private JButton turnRightButton = new JButton("Swing right");
     private JButton turnLeftButton = new JButton("Swing left");
-    private JButton addCarButton = new JButton("Add Model.Car");
-    private JButton removeCarButton = new JButton("Remove Model.Car");
+    private JButton addCarButton = new JButton("Add Car");
+    private JButton removeCarButton = new JButton("Remove Car");
     private JButton startButton = new JButton("Start all cars");
     private JButton stopButton = new JButton("Stop all cars");
 
@@ -160,14 +160,14 @@ public class CarController extends JFrame{
         addCarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //funcD.addCar();
+                funcD.addCar();
             }
         });
 
         removeCarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //funcD.removeCar();
+                funcD.removeCar();
             }
         });
 

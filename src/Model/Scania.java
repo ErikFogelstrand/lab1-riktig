@@ -13,7 +13,7 @@ public class Scania extends Vehicle{
         nrDoors = 2;
         color = Color.red;
         enginePower = 90;
-        modelName = "Model.Scania";
+        modelName = "Scania";
         platform = new PlatformHelper(0, Math.toRadians(70));
         stopEngine();
     }
